@@ -1,0 +1,36 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+    background: #E0EEE0;
+}
+
+h1 {
+    color: #85144b;
+    font-weight: 600;
+}
+
+h3 {
+    color: #2ECC40;
+    font-weight: 600;
+}
+
+.taskCompleted {
+    background-color: #66CDAA;
+}
+
+.taskCompleted > p, .taskCompleted > h3 {
+    color: white;
+}
+
+.delete {
+    margin-right: 10px;
+}
+
+#download {
+    cursor: pointer;
+    color: #337ab7;
+}
+
+#download:focus, #download:hover {
+    color: #23527c;
+    text-decoration: underline;
+}
