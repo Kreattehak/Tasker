@@ -1,10 +1,11 @@
+"use strict";
 (function TaskerApp() {
     var tasks;
     var form = document.getElementById('myForm');
     var downloadJson = document.getElementById('download');
 
-    form.addEventListener('submit', saveTask, false);
-    downloadJson.addEventListener('click', downloadTasks, false);
+    form.addEventListener('submit', saveTask);
+    downloadJson.addEventListener('click', downloadTasks);
     fetchTasks();
 
     function saveTask(event) {
@@ -95,9 +96,6 @@
         var div = document.createElement('div');
         div.classList.add('well');
 
-        var divId = 'task' + tasks[index].id;
-        div.id = divId;
-
         if (tasks[index].completed) {
             div.classList.add('taskCompleted');
         }
@@ -114,13 +112,13 @@
         completeButton.classList.add('btn', 'btn-success', 'pull-right');
         completeButton.addEventListener('click', function () {
             finishTask(tasks[index].id);
-        }, false);
+        });
 
         deleteButton.innerHTML = 'Delete';
         deleteButton.classList.add('btn', 'btn-danger', 'pull-right', 'delete');
         deleteButton.addEventListener('click', function () {
             deleteTask(tasks[index].id);
-        }, false);
+        });
 
         div.appendChild(headerSize3);
         paragraph.appendChild(completeButton);
@@ -158,7 +156,7 @@
 
         container.insertBefore(pre, footer);
 
-        downloadJson.removeEventListener('click', downloadTasks, false);
+        downloadJson.removeEventListener('click', downloadTasks);
         document.getElementById('json-block').innerHTML = "";
         document.getElementById('json-block').appendChild(helper);
     }
